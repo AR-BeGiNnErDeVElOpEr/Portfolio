@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ammar Riaz - Developer Portfolio
+
+A premium dark developer portfolio for **Ammar Riaz**, a MERN Stack and Full-Stack Developer. The website presents his profile, skills, featured projects, internship experience, GitHub activity, resume, and contact information.
+
+## Features
+
+- Animated full-screen introduction
+- Metallic text, code-symbol, and RGB accent animations
+- Responsive fixed navigation with active section tracking
+- Home, About, Skills, Projects, Experience, GitHub, and Contact sections
+- Seamless dual technology marquees with language icons
+- Centralized project data and dynamic case-study routes
+- GitHub REST API repository display with error handling
+- Resend contact-email API with a browser mail fallback
+- Downloadable resume and PDF resume replacement tool
+- SEO metadata, sitemap, robots configuration, and favicon
+- Reduced-motion support
+
+## Tech Stack
+
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Framer Motion
+- Lucide React
+- Devicon and Simple Icons
+- React Hook Form
+- Zod
+- Resend
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20 or newer
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+### Lint
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Copy `.env.example` to `.env.local`, then optionally add Resend credentials:
 
-## Deploy on Vercel
+```env
+RESEND_API_KEY=
+CONTACT_FROM_EMAIL=
+CONTACT_TO_EMAIL=ammarriaz8662@gmail.com
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Without Resend credentials, the contact form opens the visitor's email application as a fallback.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Resume
+
+The active resume is stored at:
+
+```text
+public/Ammar-Riaz-Resume.pdf
+```
+
+Replace this file directly or use the in-site **Update Resume** controls.
+
+## Project Structure
+
+```text
+src/
+  app/
+    api/contact/route.ts
+    api/resume/route.ts
+    projects/[slug]/page.tsx
+    globals.css
+    layout.tsx
+    page.tsx
+    robots.ts
+    sitemap.ts
+  components/
+    Portfolio.tsx
+  data/
+    projects.ts
+  types/
+    index.ts
+public/
+  images/projects/
+  Ammar-Riaz-Resume.pdf
+scripts/
+  capture.mjs
+```
+
+## Adding Projects
+
+Add or update project entries in `src/data/projects.ts`. Each project uses the strongly typed `Project` structure in `src/types/index.ts`.
+
+Optional fields include:
+
+- `liveUrl`
+- `githubUrl`
+- `apkUrl`
+
+Do not add broken or fabricated project URLs. Use `case-study` routes for detailed project pages.
+
+## Capturing Screenshots
+
+With Playwright dependencies installed:
+
+```bash
+npx playwright install chromium
+node scripts/capture.mjs
+```
+
+Place final optimized project images in `public/images/projects/`.
+
+## Deployment to Vercel
+
+1. Push this repository to GitHub.
+2. Open [Vercel](https://vercel.com).
+3. Select **Add New → Project**.
+4. Import the GitHub repository.
+5. Configure environment variables from `.env.example`.
+6. Deploy.
+7. Verify all sections, project routes, resume download, external links, and the contact form.
+
+## Contact
+
+- Email: [ammarriaz8662@gmail.com](mailto:ammarriaz8662@gmail.com)
+- GitHub: [AR-BeGiNnErDeVElOpEr](https://github.com/AR-BeGiNnErDeVElOpEr)
+- LinkedIn: [Ammar Riaz](https://www.linkedin.com/in/ammar-riaz-a61821278/)
