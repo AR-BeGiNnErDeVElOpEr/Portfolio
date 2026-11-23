@@ -185,6 +185,15 @@ body { margin:0; background:#08090d; color:#f7f7fb; font-family:var(--font-geist
   background:rgba(17,19,27,.82);color:#c7c8d3;font-size:12px;
 }
 .marquee-card img { filter:drop-shadow(0 5px 12px rgba(96,165,250,.10)); }
+.marquee-card {
+  border-color:rgba(167,139,250,.38);
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.marquee-card:hover {
+  transform:translateY(-5px);
+  border-color:rgba(167,139,250,.75);
+  background:rgba(22,24,38,.95);
+}
 .send-message {
   position:relative;
   overflow:hidden;
@@ -218,6 +227,66 @@ body { margin:0; background:#08090d; color:#f7f7fb; font-family:var(--font-geist
 @keyframes rgb-orbit-spin { to { transform:rotate(360deg); } }
 @keyframes code-orbit { to { transform:rotate(360deg) scaleY(.72); } }
 @keyframes text-metallic { 50% { background-position:100% 50%; } }
+
+@media (max-width:640px) {
+  .skill-marquees {
+    gap:10px;
+  }
+  .skill-marquees .marquee-track {
+    animation-duration:24s;
+  }
+  .marquee-card {
+    width:112px;
+    height:82px;
+    margin:0 7px;
+    border-radius:12px;
+  }
+  .marquee-card img {
+    width:28px;
+    height:28px;
+  }
+  .marquee-card span {
+    max-width:96px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .hero-code-wrap {
+    max-width:min(86vw,360px);
+  }
+  .hero-code-card {
+    max-height:420px;
+  }
+  .hero-code-circle {
+    top:82px;
+    height:110px;
+    width:110px;
+  }
+  .hero-code-ring {
+    top:58px;
+    height:158px;
+    width:158px;
+  }
+  .hero-code-symbol {
+    top:105px;
+    height:64px;
+    width:64px;
+  }
+  .hero-terminal {
+    bottom:14px;
+    left:14px;
+    right:14px;
+    padding:10px 12px;
+    font-size:9px;
+  }
+  .hero-terminal p {
+    margin:2px 0;
+  }
+  .intro-content h1 {
+    white-space:normal;
+    font-size:clamp(38px,12vw,58px);
+  }
+}
 @keyframes marquee { to { transform:translateX(-50%); } }
 @keyframes pulseGlow { 50% { opacity:.45; transform:scale(1.08); } }
 @media (prefers-reduced-motion:reduce) {

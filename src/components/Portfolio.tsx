@@ -146,15 +146,15 @@ export function Portfolio() {
       </AnimatePresence>
       <motion.div style={{scaleX:scrollYProgress}} className="fixed z-[60] left-0 top-0 h-[2px] w-full origin-left bg-violet-500"/>
       <nav className={`fixed z-50 left-0 top-0 w-full transition-all duration-700 ${entered?"translate-y-0 opacity-100":"pointer-events-none -translate-y-5 opacity-0"} ${scrolled?"border-b border-white/8 bg-[#08090d]/85 backdrop-blur-xl":"bg-transparent"}`}>
-        <div className="container relative grid h-20 grid-cols-[60px_1fr_120px] items-center">
+        <div className="container relative grid h-20 grid-cols-[60px_1fr_60px] items-center lg:grid-cols-[60px_1fr_120px]">
         <a href="#home" className="grid h-10 w-10 place-items-center rounded-xl border border-violet-400/25 bg-violet-500/10 font-bold text-violet-300">AR</a>
         <div className="hidden items-center justify-center gap-7 lg:flex">{nav.map(item=>{const id=item.toLowerCase()==="experience"?"experience":item.toLowerCase();return <a key={item} href={`#${id}`} onClick={()=>setActive(item)} className={`text-sm transition ${active===item?"text-white":"text-[#9295a3] hover:text-white"}`}>{item}</a>;})}</div>
           <div className="hidden items-center gap-2 lg:flex">
             <a href="#contact" className="lets-talk rounded-full px-5 py-2.5 text-sm font-semibold">Let&apos;s talk</a>
           </div>
-          <button onClick={()=>setMenu(v=>!v)} className="p-2 lg:hidden" aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
+          <button onClick={()=>setMenu(v=>!v)} className="justify-self-end p-2 lg:hidden" aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
         </div>
-        <AnimatePresence>{menu&&<motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} className="overflow-hidden border-t border-white/8 bg-[#08090d] lg:hidden"><div className="container flex flex-col py-5">{nav.map(item=><a key={item} href={`#${item.toLowerCase()}`} onClick={()=>setMenu(false)} className="border-b border-white/5 py-4">{item}</a>)}</div></motion.div>}</AnimatePresence>
+        <AnimatePresence>{menu&&<motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} transition={{duration:.32,ease:[.22,1,.36,1]}} className="overflow-hidden border-t border-white/8 bg-[#08090d]/98 backdrop-blur-xl lg:hidden"><div className="container flex flex-col py-4">{nav.map(item=>{const id=item.toLowerCase()==="experience"?"experience":item.toLowerCase();return <a key={item} href={`#${id}`} onClick={()=>setMenu(false)} className="border-b border-white/5 py-3.5 text-sm text-[#c6c7d1]">{item}</a>;})}<a href="#contact" onClick={()=>setMenu(false)} className="lets-talk mt-4 grid h-11 place-items-center rounded-full text-sm font-semibold">Let&apos;s talk</a></div></motion.div>}</AnimatePresence>
       </nav>
 
       <main>
@@ -170,19 +170,19 @@ export function Portfolio() {
               {resumeStatus&&<p className="mt-3 text-xs text-violet-300" role="status">{resumeStatus}</p>}
               <div className="mt-9 flex gap-5"><a href={social.github} target="_blank" rel="noreferrer" aria-label="GitHub"><GitBranch size={20}/></a><a href={social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-sm font-bold">in</a><a href={`mailto:${social.email}`} aria-label="Email"><Mail size={20}/></a></div>
             </motion.div>
-            <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{duration:.9,delay:.15}} className="relative">
-              <div className="glass relative mx-auto aspect-[4/5] max-w-[440px] rounded-[32px] p-3">
+            <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{duration:.9,delay:.15}} className="hero-code-wrap relative mx-auto w-full max-w-[440px]">
+              <div className="glass hero-code-card relative mx-auto aspect-[4/5] max-w-[440px] rounded-[32px] p-3">
                 <div className="absolute inset-3 overflow-hidden rounded-[24px] bg-[radial-gradient(circle_at_50%_25%,#5b21b6_0,#17142a_34%,#0c0d13_74%)]">
-                  <div className="absolute left-1/2 top-24 h-48 w-48 -translate-x-1/2 rounded-full border border-violet-300/20 bg-violet-400/10"/>
+                  <div className="hero-code-circle absolute left-1/2 top-24 h-48 w-48 -translate-x-1/2 rounded-full border border-violet-300/20 bg-violet-400/10"/>
                   <motion.div
                     animate={{rotate:360}}
                     transition={{duration:18,repeat:Infinity,ease:"linear"}}
-                    className="absolute left-1/2 top-[92px] h-56 w-56 -translate-x-1/2 rounded-full border border-dashed border-violet-300/25"
+                    className="hero-code-ring absolute left-1/2 top-[92px] h-56 w-56 -translate-x-1/2 rounded-full border border-dashed border-violet-300/25"
                   >
                     <span className="absolute left-1/2 top-[-5px] h-2.5 w-2.5 rounded-full bg-violet-300 shadow-[0_0_18px_#a78bfa]"/>
                   </motion.div>
-                  <Code2 className="absolute left-1/2 top-[155px] h-24 w-24 -translate-x-1/2 text-violet-200/80"/>
-                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-[#08090d]/82 p-4 font-mono text-xs backdrop-blur-md">
+                  <Code2 className="hero-code-symbol absolute left-1/2 top-[155px] h-24 w-24 -translate-x-1/2 text-violet-200/80"/>
+                  <div className="hero-terminal absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-[#08090d]/82 p-4 font-mono text-xs backdrop-blur-md">
                     <div className="mb-3 flex gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-red-400"/><i className="h-2.5 w-2.5 rounded-full bg-yellow-400"/><i className="h-2.5 w-2.5 rounded-full bg-green-400"/></div>
                     <p><span className="text-violet-400">const</span> developer = {"{"}</p><p className="pl-4">name: <span className="text-green-300">&quot;Ammar Riaz&quot;</span>,</p><p className="pl-4">focus: <span className="text-green-300">&quot;Full-Stack&quot;</span></p><p>{"}"}</p>
                   </div>
