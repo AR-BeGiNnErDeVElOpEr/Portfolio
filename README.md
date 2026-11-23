@@ -70,7 +70,7 @@ Copy `.env.example` to `.env.local`, then optionally add Resend credentials:
 ```env
 RESEND_API_KEY=
 CONTACT_FROM_EMAIL=
-CONTACT_TO_EMAIL=ammarriaz8662@gmail.com
+CONTACT_TO_EMAIL=abc******12@gmail.com
 ```
 
 Without Resend credentials, the contact form opens the visitor's email application as a fallback.
@@ -143,9 +143,4 @@ Place final optimized project images in `public/images/projects/`.
 5. Configure environment variables from `.env.example`.
 6. Deploy.
 7. Verify all sections, project routes, resume download, external links, and the contact form.
-
-## Contact
-
-- Email: [ammarriaz8662@gmail.com](mailto:ammarriaz8662@gmail.com)
-- GitHub: [AR-BeGiNnErDeVElOpEr](https://github.com/AR-BeGiNnErDeVElOpEr)
-- LinkedIn: [Ammar Riaz](https://www.linkedin.com/in/ammar-riaz-a61821278/)
+_________________________________________________________________________________________________________________________________
