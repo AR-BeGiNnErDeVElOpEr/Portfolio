@@ -47,6 +47,23 @@ export function Portfolio() {
     return()=>observer.disconnect();
   },[entered]);
 
+  useEffect(()=>{
+    if(!menu) return;
+    const closeOnEscape=(event:KeyboardEvent)=>{
+      if(event.key==="Escape") setMenu(false);
+    };
+    window.addEventListener("keydown",closeOnEscape);
+    return()=>window.removeEventListener("keydown",closeOnEscape);
+  },[menu]);
+
+  const navigateToSection=(id:string)=>{
+    setMenu(false);
+    window.setTimeout(()=>{
+      const target=document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:"smooth",block:"start"});
+    },260);
+  };
+
   const enterPortfolio = () => {
     if (exploring) return;
     setExploring(true);
@@ -146,15 +163,15 @@ export function Portfolio() {
       </AnimatePresence>
       <motion.div style={{scaleX:scrollYProgress}} className="fixed z-[60] left-0 top-0 h-[2px] w-full origin-left bg-violet-500"/>
       <nav className={`fixed z-50 left-0 top-0 w-full transition-all duration-700 ${entered?"translate-y-0 opacity-100":"pointer-events-none -translate-y-5 opacity-0"} ${scrolled?"border-b border-white/8 bg-[#08090d]/85 backdrop-blur-xl":"bg-transparent"}`}>
-        <div className="container relative grid h-20 grid-cols-[60px_1fr_60px] items-center lg:grid-cols-[60px_1fr_120px]">
+        <div className="container relative grid h-20 grid-cols-[60px_1fr_60px] items-center md:grid-cols-[60px_1fr_120px]">
         <a href="#home" className="grid h-10 w-10 place-items-center rounded-xl border border-violet-400/25 bg-violet-500/10 font-bold text-violet-300">AR</a>
-        <div className="hidden items-center justify-center gap-7 lg:flex">{nav.map(item=>{const id=item.toLowerCase()==="experience"?"experience":item.toLowerCase();return <a key={item} href={`#${id}`} onClick={()=>setActive(item)} className={`text-sm transition ${active===item?"text-white":"text-[#9295a3] hover:text-white"}`}>{item}</a>;})}</div>
-          <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center justify-center gap-7 md:flex">{nav.map(item=>{const id=item.toLowerCase()==="experience"?"experience":item.toLowerCase();return <a key={item} href={`#${id}`} onClick={()=>setActive(item)} className={`text-sm transition ${active===item?"text-white":"text-[#9295a3] hover:text-white"}`}>{item}</a>;})}</div>
+          <div className="hidden items-center justify-end gap-2 md:flex">
             <a href="#contact" className="lets-talk rounded-full px-5 py-2.5 text-sm font-semibold">Let&apos;s talk</a>
           </div>
-          <button onClick={()=>setMenu(v=>!v)} className="justify-self-end p-2 lg:hidden" aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
+          <button onClick={()=>setMenu(v=>!v)} className="justify-self-end p-2 md:hidden" aria-label="Toggle menu" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
         </div>
-        <AnimatePresence>{menu&&<motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} transition={{duration:.32,ease:[.22,1,.36,1]}} className="overflow-hidden border-t border-white/8 bg-[#08090d]/98 backdrop-blur-xl lg:hidden"><div className="container flex flex-col py-4">{nav.map(item=>{const id=item.toLowerCase()==="experience"?"experience":item.toLowerCase();return <a key={item} href={`#${id}`} onClick={()=>setMenu(false)} className="border-b border-white/5 py-3.5 text-sm text-[#c6c7d1]">{item}</a>;})}<a href="#contact" onClick={()=>setMenu(false)} className="lets-talk mt-4 grid h-11 place-items-center rounded-full text-sm font-semibold">Let&apos;s talk</a></div></motion.div>}</AnimatePresence>
+        <AnimatePresence>{menu&&<motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} transition={{duration:.32,ease:[.22,1,.36,1]}} className="overflow-hidden border-t border-white/8 bg-[#08090d]/98 backdrop-blur-xl md:hidden"><div className="container flex flex-col py-4">{nav.map(item=>{const id=item.toLowerCase()==="experience"?"experience":item.toLowerCase();return <button key={item} type="button" onClick={()=>navigateToSection(id)} className="border-b border-white/5 py-3.5 text-left text-sm text-[#c6c7d1]">{item}</button>;})}<button type="button" onClick={()=>navigateToSection("contact")} className="lets-talk mt-4 grid h-11 place-items-center rounded-full text-sm font-semibold">Let&apos;s talk</button></div></motion.div>}</AnimatePresence>
       </nav>
 
       <main>

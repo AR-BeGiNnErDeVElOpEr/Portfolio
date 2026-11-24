@@ -229,6 +229,12 @@ body { margin:0; background:#08090d; color:#f7f7fb; font-family:var(--font-geist
 @keyframes text-metallic { 50% { background-position:100% 50%; } }
 
 @media (max-width:640px) {
+  .container {
+    width:min(100% - 32px,1120px);
+  }
+  nav .container {
+    width:calc(100% - 32px);
+  }
   .skill-marquees {
     gap:10px;
   }
