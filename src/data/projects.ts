@@ -2,6 +2,30 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    id: "resumeiq",
+    slug: "resumeiq",
+    title: "ResumeIQ",
+    category: "AI Projects",
+    platform: "AI resume analysis",
+    description: "A full-stack AI resume analyzer that estimates job compatibility and provides evidence-based strengths, gaps, recommendations, and Gemini-powered improvement suggestions.",
+    image: "/images/projects/resumeiq-preview.svg",
+    technologies: ["React", "Vite", "Node.js", "MongoDB", "Gemini API"],
+    githubUrl: "https://github.com/AR-BeGiNnErDeVElOpEr/ResumeIQ-AI",
+    featured: true,
+    purpose: "Help job seekers compare resume evidence with a target role and identify practical ways to improve their application.",
+    contribution: "Implemented the full-stack application, including authenticated resume analysis, ATS-style scoring, saved history, and AI-assisted suggestions.",
+    features: [
+      "PDF resume analysis against a job description",
+      "Evidence-based compatibility score and category breakdown",
+      "Strengths, confirmed gaps, and recommendations",
+      "Gemini-powered resume improvement suggestions",
+      "Searchable analysis history and PDF report export",
+      "Profile management and account-data deletion",
+    ],
+    challenges: "Making the compatibility estimate explainable by distinguishing confirmed matches and gaps from requirements that the resume does not verify.",
+    lessons: "Applied explicit consent, validated AI responses, and privacy-conscious handling of resume documents in a tested full-stack workflow.",
+  },
+  {
     id: "carhive",
     slug: "carhive",
     title: "CarHive",

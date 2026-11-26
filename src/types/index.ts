@@ -1,4 +1,4 @@
-export type ProjectCategory = "Web Applications" | "Frontend Development" | "Mobile Applications";
+export type ProjectCategory = "Web Applications" | "Frontend Development" | "Mobile Applications" | "AI Projects";
 
 export type Project = {
   id: string;

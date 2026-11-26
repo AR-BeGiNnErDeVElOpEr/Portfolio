@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" fill="none">
+  <defs>
+    <linearGradient id="background" x1="120" y1="50" x2="1310" y2="810" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111020"/>
+      <stop offset="1" stop-color="#080A12"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="245" y1="224" x2="589" y2="603" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="score" x1="958" y1="346" x2="1097" y2="486" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C4B5FD"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <filter id="glow" x="47" y="-62" width="650" height="650" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="76"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="810" fill="url(#background)"/>
+  <circle cx="372" cy="264" r="220" fill="#6D28D9" fill-opacity=".26" filter="url(#glow)"/>
+  <circle cx="1285" cy="701" r="250" fill="#5B21B6" fill-opacity=".15"/>
+  <text x="88" y="106" fill="#DDD6FE" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4">RESUMEIQ</text>
+  <rect x="1067" y="73" width="284" height="36" rx="18" fill="#171526" stroke="#514477"/>
+  <circle cx="1087" cy="91" r="4" fill="#A78BFA"/>
+  <text x="1101" y="96" fill="#C4B5FD" font-family="Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="1">ILLUSTRATIVE PRODUCT PREVIEW</text>
+  <text x="88" y="245" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="54" font-weight="700">A clearer path</text>
+  <text x="88" y="310" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="54" font-weight="700">to your next role.</text>
+  <text x="91" y="366" fill="#A8A6B8" font-family="Arial, sans-serif" font-size="21">Understand how your resume aligns with</text>
+  <text x="91" y="398" fill="#A8A6B8" font-family="Arial, sans-serif" font-size="21">the experience employers are seeking.</text>
+  <rect x="90" y="452" width="195" height="48" rx="24" fill="url(#accent)"/>
+  <text x="122" y="483" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="15" font-weight="700">AI-POWERED ANALYSIS</text>
+  <text x="90" y="711" fill="#777489" font-family="Arial, sans-serif" font-size="13" letter-spacing="1">A CONCEPT PREVIEW — NOT AN APP SCREENSHOT</text>
+  <rect x="604" y="156" width="757" height="534" rx="24" fill="#10111B" stroke="#39344F"/>
+  <path d="M628 156H1337C1350.25 156 1361 166.745 1361 180V222H604V180C604 166.745 614.745 156 628 156Z" fill="#181827"/>
+  <circle cx="635" cy="189" r="5" fill="#F87171"/>
+  <circle cx="654" cy="189" r="5" fill="#FBBF24"/>
+  <circle cx="673" cy="189" r="5" fill="#34D399"/>
+  <text x="710" y="194" fill="#D6D2E5" font-family="Arial, sans-serif" font-size="14" font-weight="600">Resume Analysis</text>
+  <rect x="630" y="249" width="195" height="413" rx="14" fill="#151522"/>
+  <text x="653" y="287" fill="#D8D5E4" font-family="Arial, sans-serif" font-size="14" font-weight="700">YOUR WORKSPACE</text>
+  <rect x="647" y="308" width="161" height="43" rx="9" fill="#29213D" stroke="#6846A4"/>
+  <circle cx="667" cy="329" r="5" fill="#A78BFA"/>
+  <text x="683" y="334" fill="#E9D5FF" font-family="Arial, sans-serif" font-size="13">New analysis</text>
+  <circle cx="667" cy="380" r="5" fill="#6D6980"/>
+  <text x="683" y="385" fill="#A8A6B8" font-family="Arial, sans-serif" font-size="13">Analysis history</text>
+  <circle cx="667" cy="425" r="5" fill="#6D6980"/>
+  <text x="683" y="430" fill="#A8A6B8" font-family="Arial, sans-serif" font-size="13">Resume assistant</text>
+  <circle cx="667" cy="470" r="5" fill="#6D6980"/>
+  <text x="683" y="475" fill="#A8A6B8" font-family="Arial, sans-serif" font-size="13">Profile</text>
+  <rect x="847" y="249" width="488" height="132" rx="14" fill="#171725" stroke="#2B293C"/>
+  <text x="870" y="281" fill="#9A96AA" font-family="Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="1">ROLE ALIGNMENT</text>
+  <text x="870" y="317" fill="#F4F1FA" font-family="Arial, sans-serif" font-size="21" font-weight="700">Review your job match</text>
+  <text x="870" y="345" fill="#9A96AA" font-family="Arial, sans-serif" font-size="13">Evidence-backed insights from your resume and target role.</text>
+  <rect x="847" y="399" width="488" height="240" rx="14" fill="#171725" stroke="#2B293C"/>
+  <text x="870" y="434" fill="#F4F1FA" font-family="Arial, sans-serif" font-size="17" font-weight="700">Compatibility breakdown</text>
+  <text x="870" y="463" fill="#8F8A9F" font-family="Arial, sans-serif" font-size="12">Skills, experience, education, and role keywords</text>
+  <circle cx="1047" cy="547" r="51" stroke="#302A43" stroke-width="10"/>
+  <path d="M1047 496A51 51 0 0 1 1097 555" stroke="url(#score)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1047" cy="547" r="4" fill="#C4B5FD"/>
+  <text x="1127" y="516" fill="#DDD6FE" font-family="Arial, sans-serif" font-size="13" font-weight="600">Skills</text>
+  <rect x="1180" y="507" width="118" height="7" rx="3.5" fill="#2D293B"/>
+  <rect x="1180" y="507" width="83" height="7" rx="3.5" fill="#8B5CF6"/>
+  <text x="1127" y="551" fill="#DDD6FE" font-family="Arial, sans-serif" font-size="13" font-weight="600">Experience</text>
+  <rect x="1208" y="542" width="90" height="7" rx="3.5" fill="#2D293B"/>
+  <rect x="1208" y="542" width="59" height="7" rx="3.5" fill="#8B5CF6"/>
+  <text x="1127" y="586" fill="#DDD6FE" font-family="Arial, sans-serif" font-size="13" font-weight="600">Education</text>
+  <rect x="1195" y="577" width="103" height="7" rx="3.5" fill="#2D293B"/>
+  <rect x="1195" y="577" width="69" height="7" rx="3.5" fill="#8B5CF6"/>
+  <text x="1127" y="621" fill="#DDD6FE" font-family="Arial, sans-serif" font-size="13" font-weight="600">Keywords</text>
+  <rect x="1190" y="612" width="108" height="7" rx="3.5" fill="#2D293B"/>
+  <rect x="1190" y="612" width="74" height="7" rx="3.5" fill="#8B5CF6"/>
+</svg>
